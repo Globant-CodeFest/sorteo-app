@@ -50,7 +50,7 @@ jobs:
             const fs = require('fs')
             
             await github.paginate(github.rest.issues.listComments,
-              { owner: 'globant-codefest', repo: 'sorte-app', issue_number: ${{ env.ISSUE_ID }} },
+              { owner: 'globant-codefest', repo: 'sorteo-app', issue_number: ${{ env.ISSUE_ID }} },
               (response) => response.data.map((issuecomment) => issuecomment.user.login)
             )
             .then((commenters) => {
